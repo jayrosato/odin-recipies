@@ -69,8 +69,7 @@ backspace_button = document.getElementById("backspace_button");
 backspace_button.onclick =() => push_backspace();
 
 function push_backspace() {
-    let target_char = display_bar.innerText.length;
-    display_bar.innerText = display_bar.innerText.replace(display_bar.innerText[target_char-1], "");
+    display_bar.innerText = display_bar.innerText.slice(0, -1)
 };
 
 //clear button

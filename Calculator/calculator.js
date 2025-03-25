@@ -86,12 +86,24 @@ compute_button.onclick = () => parse_expression();
 
 function parse_expression() {
     let expression = display_bar.innerText;
-    const operators = ['+', '-', '*', '/', '(', ')', '^'];
-    const special_chars = ['+', '-', '*', '/', '(', ')', '^', '.'];
+    //check for double operators
+    const operators = ['+', '-', '*', '/', '^'];
+    const special_chars = ['+', '-', '*', '/', '^', '.'];
     let doubled_operators = new RegExp(`[\\${special_chars.join('\\')}]\\s*[\\${special_chars.join('\\')}]`);
-    if(doubled_operators.test(expression)==true) {alert('Syntax Error. Two consecutive operators.'); return};
+    if(doubled_operators.test(expression)==true) {alert('Syntax Error. Two or more consecutive operators.'); return};
 
+    //check for an instance where a user entered an invalid float (e.g. 1.5.3)
+    regex = /\b\d+(\.\d+){2,}\b/
+    if(regex.test(expression)===true) {
+        alert('Syntax Error. Check your use of decimals'); return ''}
+    
+    //check start and end of string for incorrectly placed operators
+    let first_char = expression.charAt(0)
+    let end_char = expression.charAt(-1)
+    if(special_chars.includes(first_char)) {expression.replace(expression[0], '')}
+    if(special_chars.includes(end_char)) {expression.replace(expression[-1], '')}
 
+    //check for correct usage of parentheses
     let start_par =[];
     let end_par =[];
     

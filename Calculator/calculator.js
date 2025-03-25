@@ -86,9 +86,15 @@ compute_button.onclick = () => parse_expression();
 
 function parse_expression() {
     let expression = display_bar.innerText;
+    const operators = ['+', '-', '*', '/', '(', ')', '^'];
+    const special_chars = ['+', '-', '*', '/', '(', ')', '^', '.'];
+    let doubled_operators = new RegExp(`[\\${special_chars.join('\\')}]\\s*[\\${special_chars.join('\\')}]`);
+    if(doubled_operators.test(expression)==true) {alert('Syntax Error. Two consecutive operators.'); return};
+
+
     let start_par =[];
     let end_par =[];
-    const operators = ['+', '-', '*', '/', '(', ')', '^']
+    
     for(i=0; i<expression.length; i++) {
         char = expression.charAt(i);
         if(char == '('){start_par.push(i);

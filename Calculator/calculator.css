@@ -1,0 +1,47 @@
+.display_bar {
+    border-style: solid;
+    height: 50px;
+    width: 400px;
+}
+
+.buttons_cont {
+    display: flex;
+    flex-direction: row;
+}
+.side_button_cont {
+    display: flex;
+    flex-direction: row;
+}
+.column_cont{
+    display: flex;
+    flex-direction: column;
+}
+.number_pad_cont {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+}
+
+.row_cont {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    width: 180px;
+}
+
+.special_buttons {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.button {
+    background-color: bisque;
+    border-style: solid;
+    text-align: center;
+    height: 60px;
+    width: 60px;
+}
+
+.button:hover {
+    background-color: aquamarine;
+}

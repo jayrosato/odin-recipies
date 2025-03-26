@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="page_container">
+    <div class="side_panel">
+        <div class="logo_bar">
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="yellow" stroke-width="1" fill="white" />
+              </svg>
+            <h1>Cheesecake Industries</h1>
+        </div>
+    </div>
+
+    <div class="main_panel">
+        <div class="intro_text">
+            <h1>Sign up now, and begin your journey with the completely legitimate
+                Cheesecake Industries!</h1>
+            <h2>Don't worry. We are <u>100% legit</u>.</h2>
+        </div>
+
+        <div class="form_container">
+            <h2>I'm in!</h2>
+            <form class="form">
+                <fieldset>
+                    <div class="label_input_container">
+                        <label for="first_name">First Name</label>
+                        <input id="first_name" type="text" name="first_name" required>
+                    </div>
+
+                    <div class="label_input_container">
+                        <label for="last_name">Last Name</label>
+                        <input id="last_name" type="text" name="last_name" required>
+                    </div>
+                </fieldset> 
+
+                <fieldset>
+                    <div class="label_input_container">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" required>
+                    </div>
+
+                    <div class="label_input_container">
+                        <label for="phone">Phone Number ex: [123-456-7890]</label>
+                        <input id="phone" type="text" name="phone" pattern="(\d{3}[\-]\d{3}[\-]\d{4})?">
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <div class="label_input_container">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password" onkeyup="match_passwords()" required>
+                    </div>
+
+                    <div class="label_input_container">
+                        <div class="popup">
+                            <span class="popuptext" id="myPopup">Your passwords do not match</span>
+                        </div>
+                        <label for="confirm_password">Confirm Password</label>
+                        <input id="confirm_password" type="password" name="confirm_password" onkeyup="match_passwords()" required >
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="shadow"></div>
+        <div id="submit_button" class="submit_button" onclick="create_user()">
+            <p>Let's Go!</p>
+        </div>
+        
+        <div id="mutable_text_container">
+            <p id="replace_me"><i>Already have an account?</i> <a href="user_form.html">Login!</a></p>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+    
+</body>
+</html>

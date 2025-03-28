@@ -1,0 +1,8 @@
+.board {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.space:hover {
+    background-color: green;
+}
